@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Tandem Tanks</title>
+        <script type="text/javascript" src = "simpleGame.js"></script>
+        <script type="text/javascript" src = "tankFunctions.js"></script>
+        <link rel="stylesheet" type="css/text" href="tankStyle.css">
+        <link href='http://fonts.googleapis.com/css?family=Permanent+Marker|Shadows+Into+Light|Special+Elite' rel='stylesheet' type='text/css'>
+    <audio id="backMusic" src="techno.mp3" preload="auto"></audio>
+    <audio id="firing" src="gunshot.mp3" preload="auto"></audio>
+    <audio id="hit" src="explosion_punchy_impact_02.mp3" preload="auto"></audio>
+</head>
+<body> 
+    <span id="scoreLabel">Score:<span id="activeScore">&nbsp;0</span></span>
+    <span id="timeLabel">Time:<span id="timePlayed">&nbsp;0</span></span>
+    <span id="accuracyLabel">Accuracy:<span id="accuracyPercent">&nbsp;0</span>%</span>
+    <span id="waitLabel">&nbsp;<span id="reloadPrompt">&nbsp;</span></span>
+    <span id="weaponChange">&nbsp;<span id="cyclingPrompt">&nbsp;</span></span>
+    <span id="weaponType"><span id="showWeapon">&nbsp;</span></span>
+    <span id="nbLabel"><span id="nbPrompt">&nbsp;</span></span>
+    <div id="splashScreen">
+        <div id="authorNames">Created By: Jack Heiden and Vallie Joseph</div>
+        <img alt="Splash Screen for Instructions and Start" src="splashImproved.jpg"> 
+        <div id="buttonGroups">
+            <div id="play" onclick="startingGame()">Start</div><br>
+            <div id="instructions" onclick="showInstructions()" >Instructions</div>
+        </div>
+    </div>
+
+    <div id="instructionScreen">
+        <img alt ="Instruction Screen for Instructing User" 
+             src="instructScreen.jpg">
+        <div id="arrowAni1">
+            <img id="keyBlink2" alt="Arrow Keys going Left and Right"
+                 src="blankKeyani2.gif"> </div>
+        <div id="tankMoveleft">
+            <img id="leftTank" alt="Tank going to the Left"
+                 src="tankGoLeft.gif" > </div>
+        <div id="tankMoveRight">
+            <img id="rightTank" alt="Tank going to the Right"
+                 src="tankGoRight4.gif" > </div>
+        <div id="instructionText">
+            <h1>Movement</h1>
+            <p>Use the 'A' and 'D' keys to move left to right.</p> </div>
+        <div id="arrowAni2">
+            <img id="keyBlink" alt="Arrow Keys going Up and Down" 
+                 src="blankKeyani3.gif"></div>
+        <div id="tankTurretup">
+            <img id="upTurret" alt="Tan Turret Rotating Upwards" 
+                 src="up.gif"  ></div>
+        <div id="tankTurretdown">
+            <img id="downTurret" alt="Tan Turret Rotating Downwards" 
+                 src="Down.gif" ></div>
+        <div id="instructionText2">
+            <h1>Aiming</h1>
+            <p>Use the 'W' and 'S' keys to aim up or down.</p> </div>
+        <div id="playFrominstructions" onclick="instructionStart()">
+            Start</div><br>       
+    </div>
+    <div id="progressBarHolder">
+        <progress value="100" max="100" id=p1>50%</progress></div>
+    <div id="playerHealthholder">
+        <progress value="100" max="100" id=p2>80%</progress></div>
+    <div id="victoryScreen">
+        <img id="spinCoin" alt="Spinning BackgroundCoin" src="coinSpinning2.gif">
+        <div id="victoryText">
+            <br><br><br>Victory!<br><span id="checkVictory"> Good Job!</span><br>
+            <span>Your Score Was:<span id="finalScore"></span></span>
+        </div>
+        <div id="restartGame" onClick="showStore()">
+            Go To Weapon Store</div></div>
+    <div id="loserScreen">
+        <br><br><br>Aww!<br><span id="checkLoss"> Sorry Mate!</span><br>
+        <span>Your Score Was:<span id="finalScoreLost"></span></span>
+        <div id="restartGame2" onClick="window.location.reload()">
+            Play Again?</div>
+    </div>
+    <div id="soundOnoffTogg">
+        <img id="soundOff" onclick="toggle()" alt="Sound Off Toggle"
+             src="soundoff.png">
+        <img id="soundOn" onclick="toggleBack()" alt="Sound On Toggle" 
+             src="soundon.png">
+    </div>
+    <div id="storeFront"> 
+        <span id="pointsLeftHolder">
+            <strong>You have&nbsp;&nbsp;</strong>
+            <span id="pointsLeft">100</span><strong>
+                &nbsp;&nbsp;credits to spend</strong></span>
+        <span id="selector">0</span>
+        <span id="selector2">0</span>
+        <span id="selector3">0</span>
+        <span id="selector4">0</span>
+        <span id="selector5">0</span>
+        <img id="missileRed" src="Missile04N.png" 
+             alt="Red Missile" >
+        <img id="missileGreen" src="greenMissile.png" 
+             alt="Green Missile">
+        <img id="missileRedblue" src="Missile05.png" 
+             alt="Red/Blue Missile Missile">
+        <img id="missileBlue" src="blueMissile.png" 
+             alt="Blue Missile">
+        <img id="missileOrange" src="orangeMissile.png"
+             alt="Orange Missile" >
+        <div class="noselect" id="arrowRight5" onclick="upOne5()"></div>
+        <div class="noselect" id="arrowLeft5" onclick="downOne5()"></div>
+        <div class="noselect" id="arrowRight4" onclick="upOne4()"></div>
+        <div class="noselect" id="arrowLeft4" onclick="downOne4()"></div>
+        <div class="noselect" id="arrowRight3" onclick="upOne3()"></div>
+        <div class="noselect" id="arrowLeft3" onclick="downOne3()"></div>
+        <div class="noselect" id="arrowRight2" onclick="upOne2()"></div>
+        <div class="noselect" id="arrowLeft2" onclick="downOne2()"></div>
+        <div class="noselect" id="arrowRight" onclick="upOne()"></div>
+        <div class="noselect" id="arrowLeft" onclick="downOne()"></div>
+        <div id="purchaseButton" onclick=" continueGame()">CONFIRM?</div>
+        <h1 class="weaponTitle">WEAPONS</h1>
+        <div id="backStorescreen"><img id="storeBackgroundImg" alt="Background
+                                       Image for weapon store"
+                                       src="weaponstorebackground2.png"></div>
+        <div id="descrPiece">
+            <center>Use the arrows to select weapon quantities. Choose either 
+                confirm or cancel to complete or cancel your purchase.</center>
+        </div>
+    </div>
+</body>
+
+</html>     

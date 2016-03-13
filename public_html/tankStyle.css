@@ -1,0 +1,721 @@
+/*Holds Player's Current Score*/
+#scoreLabel{
+    position:absolute;
+    z-index:15;
+    margin-left: 50px; 
+    padding-top:40px;
+    color:white;
+    font-size: 120%;
+}
+/*Displays Current Elapsed Time*/
+#timeLabel{
+    position:absolute;
+    z-index:15;
+    margin-left: 50px; 
+    padding-top: 60px;
+    color:white;
+    font-size: 120%;
+}
+/*Informs Player of Wait Time For Weapon Reload*/
+#waitLabel{
+    position:absolute;
+    z-index:15;
+    margin-left: 290px; 
+    padding-top: 280px;
+    color:white;
+    font-size: 120%;
+    text-shadow: 1px 0 2px red;
+}
+/*Dynamicaly Displays Player Accuracy*/
+#accuracyLabel{
+    position:absolute;
+    z-index:15;
+    margin-left: 50px; 
+    padding-top: 80px;
+    color:white;
+    font-size: 120%;
+}
+/*Shows the Player's Currently Selected Weapon Label*/
+#weaponType{
+    position:absolute;
+    z-index:15;
+    margin-left: 50px; 
+    padding-top: 100px;
+    color:white;
+    font-size: 120%;
+}
+/*Informs the Player of Wait Time for Weapon Change*/
+#weaponChange{
+    position:absolute;
+    z-index:15;
+    margin-left: 200px; 
+    padding-top: 310px;
+    color:white;
+    font-size: 120%;
+    text-shadow: 0 0 2px blue;
+}
+/*Screen that Displays when Player Wins the Game*/
+#victoryScreen{
+    width: 800px;
+    height: 600px;
+    background-color:black;
+    position: absolute;
+    z-index: 999;
+    color: white;
+    font-size:300%;
+    text-align: center;
+    margin-left:10px;
+    margin-top:10px;
+    display: none;
+}
+/*Screen that Displays when Player Looses the Game*/
+#loserScreen{
+    width: 800px;
+    height: 600px;
+    background-color:black;
+    position: absolute;
+    z-index: 999;
+    color: white;
+    font-size:300%;
+    text-align: center;
+    margin-left:10px;
+    margin-top:10px;
+    display: none;
+}
+/*Screen that Displays when Player Selects "Instructions" from Main Menu*/
+#instructionScreen{
+    position: absolute;
+    z-index: 50;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+/*Main Menu Screen That Displays on Page Load*/
+#splashScreen{
+    margin-left:11px;
+    margin-top:10px;
+    position: absolute;
+    z-index: 999;
+}
+/*Button That Allows Player to Start the Game*/
+#play{
+    height:70px;
+    width:150px;;
+    line-height:70px;
+    background-color: #FFB547;
+    text-align:center;
+    font-size:130%;
+    border-radius:10px;
+    box-shadow: white 0px 0px 11px 4px;
+    color:white;
+    position:absolute;
+    margin-top:-200px;
+    margin-left:200px;
+}
+/*Suprise Label*/
+#nbLabel{
+    position:absolute;
+    z-index:15;
+    margin-left: 500px; 
+    padding-top: 80px;
+    color:white;
+    font-size: 120%;
+}
+/*Button That Allows Player to Diplay Instructions*/ 
+#instructions{
+    height:70px;
+    width:150px;
+    line-height:70px;
+    background-color: #FFB547;
+    text-align:center;
+    font-size:130%;
+    border-radius:5px;
+    box-shadow: white 0px 0px 11px 4px;
+    color:white;
+    position:absolute;
+    margin-top:-219px;
+    margin-left:500px;
+}
+/*Color and Cursor Property Manipulation to Instructions Button On Hover*/
+#instructions:hover{
+    background-color:white;
+    color:red;
+    cursor: pointer;
+    -webkit-transition:background-color 2s;
+}
+/*Color and Cursor Property Manipulation to Instructions Button On Hover*/
+#play:hover{
+    background-color:white;
+    color:red;
+    -webkit-transition:background-color 2s;
+    cursor: pointer;
+}
+/*Color and Cursor Property Manipulation to Instructions Button On Hover*/
+#playFrominstructions:hover{
+    background-color:white;
+    color:red;
+    -webkit-transition:background-color 2s;
+    cursor: pointer;
+}
+/*Cursor Property Manipulation to Pointer On Hover*/
+#restartGame:hover{
+    cursor: pointer;
+}
+/*Cursor Property Manipulation to Pointer On Hover*/
+img#soundOn:hover{
+    cursor:pointer
+}
+/*Cursor Property Manipulation to Pointer On Hover*/
+img#soundOff:hover{
+    cursor:pointer;
+}
+/*Holds Player Health Bar*/
+#playerHealthholder{
+    position: absolute;
+    z-index: 11;
+    padding-top: 150px;
+    padding-left: 40px;
+}
+/*Displays Player Current Health*/
+progress{
+    width: 15em;
+    height: 1.8em;
+    border-radius:7px;
+    box-shadow: 2px 1px 6px 2px;
+    background-color:transparent;
+    -webkit-transition: width 2s;
+    transition: width 2s;
+}
+/*Enemy's Current Health Bar Color*/
+progress::-webkit-progress-value{
+    background: purple;
+    border-radius:7px;
+}
+/*Player's Current Health Bar Color*/
+progress#p2::-webkit-progress-value{
+    background: orange;
+    border-radius:7px;
+}
+/*Displays Enemy Current Health*/
+#progressBarHolder{
+    position: absolute;
+    z-index:10;
+    margin-left:550px;
+    margin-top:150px;
+    -ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
+
+}
+/*Allows Player to Start the Game From the Instruction Screen*/
+#playFrominstructions{
+    height:70px;
+    width:150px;;
+    line-height:70px;
+    background-color: #FFB547;
+    text-align:center;
+    font-size:130%;
+    border-radius:10px;
+    box-shadow: white 0px 0px 11px 4px;
+    color:white;
+    position:absolute;
+    z-index:10 ;
+    margin-top:-100px;
+    margin-left:30px;
+}
+/*Arrow Key Animation Holder Left*/
+#arrowAni1{
+    position:absolute;
+    z-index:10 ;
+    margin-top: -450px;
+    margin-left: 520px;
+}
+/*Arrow Key Holder Animation Up*/
+#arrowAni2{
+    position:absolute;
+    z-index:10 ;
+    margin-top: -300px;
+    margin-left: 520px;
+}
+/*Tank Moving to the Left Gif*/
+#tankMoveleft{
+    position:absolute;
+    z-index:10 ;
+    margin-top: -450px;
+    margin-left: 350px;
+}
+/*Tank Moving to the Right Gif*/
+#tankMoveRight{
+    position:absolute;
+    z-index:10 ;
+    margin-top: -450px;
+    margin-left: 650px;
+}
+/*Tank Turret Rotating Upward Gif*/
+#tankTurretup{
+    position:absolute;
+    z-index:10 ;
+    margin-top: -290px;
+    margin-left: 350px;
+}
+/*Tank Turret Rotating Downward Gif*/
+#tankTurretdown{
+    position:absolute;
+    z-index:10 ;
+    margin-top: -290px;
+    margin-left: 650px;
+}
+/*Tank Left and Right Movement Instructon Text*/
+#instructionText{
+    position:absolute;
+    z-index:10 ;
+    margin-top: -500px;
+    margin-left: 30px;
+    color: white;
+}
+/*Tank Upward and Downward Turret Movement Instructon Text*/
+#instructionText2{
+    position:absolute;
+    z-index:10 ;
+    margin-top: -360px;
+    margin-left: 30px;
+    color: white;
+}
+/*Mute/Unmute Toggle Holder*/
+#soundOnoffTogg{
+    position: absolute;
+    z-index:15;
+    padding-left: 20px;
+    margin-top: 560px;
+}
+/*Button That Allows Players to Restart the Game*/
+#restartGame{
+    position:absolute;
+    z-index:8;
+    width: 450px;
+    height: 75px;
+    background-color:darkcyan;
+    line-height: 75px;
+    border-radius: 5px;
+    margin-left: 150px;
+    margin-top:480px;
+}
+/*Prompt for restart game*/
+#restartGame2{
+    width: 250px;
+    height: 75px;
+    background-color:darkcyan;
+    line-height: 75px;
+    border-radius: 5px;
+    margin-left: 272px;
+    margin-top:100px;
+}
+/*Cursor Maniuplation for restart button*/
+#restartGame2:hover{
+    cursor:pointer;
+}
+/*Key Up and Down Instruction Gif*/
+img#keyBlink2{
+    width:40%;
+}
+/*Tank Moving to the Left Gif*/
+img#leftTank{
+    width:45%;
+}
+/*Tank Moving to the Right Gif*/
+img#rightTank{
+    width:85%;
+}
+/*Key Left and Right Instruction Gif*/
+img#keyBlink{
+    width:45%;
+}
+/*Tank Turret Going Up Gif*/
+img#upTurret{
+    width:45%;
+}
+/*Tank Turret Going Down Gif*/
+img#downTurret{
+    width:85%;
+}
+/*Sound On Icon*/
+img#soundOn{
+    display: none;
+    width:50px;
+    height:auto;
+}
+/*Sound Off Icon*/
+img#soundOff{
+    width:50px;
+    height:auto;
+}
+/*Makes text non-selectable*/
+.noselect{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+/*BackHolder for Weapon Store*/
+#backStorescreen{
+    width:800px;
+    height:600px;
+    background-color: black;
+    position:absolute;
+    margin-top:10px;
+    margin-left:10px;
+}
+/*Holds store page*/
+#storeFront{
+    position:absolute;
+    z-index:20;
+    display:none;
+}
+/*Increase Button Cursor Manipulation for Missle Selection*/
+#arrowRight:hover {
+    cursor: pointer;
+}
+/*Decrease Button Cursor Manipulation for Missle Selection*/
+#arrowLeft:hover{
+    cursor: pointer; 
+}
+/*Increase Button for Missle Selection*/
+#arrowRight{
+    width: 0; 
+    height: 0; 
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid blue;
+    position: absolute;
+    z-index:2;
+    margin-top:175px;
+    margin-left:130px;
+}
+/*Decrease Button for Missle Selection*/
+#arrowLeft{
+    width: 0; 
+    height: 0; 
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent; 
+    border-right:15px solid red; 
+    margin-top:175px;
+    margin-left:30px;
+    position: absolute;
+    z-index:2;
+}
+/*Increase Button for Missle Selection*/
+#arrowRight2{
+    width: 0; 
+    height: 0; 
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid blue;
+    position: absolute;
+    z-index:2;
+    margin-top:175px;
+    margin-left:452px;
+}
+/*Decrease Button for Missle Selection*/
+#arrowLeft2{
+    width: 0; 
+    height: 0; 
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent; 
+    border-right:15px solid red; 
+    margin-top:175px;
+    margin-left:340px;
+    position: absolute;
+    z-index:2;
+}
+/*Increase Button Cursor Manipulation for Missle Selection*/
+#arrowRight2:hover{
+    cursor: pointer;
+}
+/*Decrease Button Cursor Manipulation for Missle Selection*/
+#arrowLeft2:hover{
+    cursor: pointer;
+}
+/*Increase Button for Missle Selection*/
+#arrowRight3{
+    width: 0; 
+    height: 0; 
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid blue;
+    position: absolute;
+    z-index:2;
+    margin-top:398px;
+    margin-left:130px;
+}
+/*Decrease Button for Missle Selection*/
+#arrowLeft3{
+    width: 0; 
+    height: 0; 
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent; 
+    border-right:15px solid red; 
+    margin-top:398px;
+    margin-left:20px;
+    position: absolute;
+    z-index:2;
+}
+/*Increase Button Cursor Manipulation for Missle Selection*/
+#arrowRight3:hover{
+    cursor: pointer;
+}
+/*Decrease Button Cursor Manipulation for Missle Selection*/
+#arrowLeft3:hover{
+    cursor: pointer;
+}
+/*Increase Button for Missle Selection*/
+#arrowRight4{
+    width: 0; 
+    height: 0; 
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid blue;
+    position: absolute;
+    z-index:2;
+    margin-top:398px;
+    margin-left:452px;
+}
+/*Decrease Button for Missle Selection*/
+#arrowLeft4{
+    width: 0; 
+    height: 0; 
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent; 
+    border-right:15px solid red; 
+    margin-top:398px;
+    margin-left:340px;
+    position: absolute;
+    z-index:2;
+}
+/*Increase Button Cursor Manipulation for Missle Selection*/
+#arrowRight4:hover{
+    cursor: pointer;
+}
+/*Decrease Button Cursor Manipulation for Missle Selection*/
+#arrowLeft4:hover{
+    cursor: pointer;
+}
+/*Increase Button for Missle Selection*/
+#arrowRight5{
+    width: 0; 
+    height: 0; 
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid blue;
+    position: absolute;
+    z-index:2;
+    margin-top:398px;
+    margin-left:750px;
+}
+/*Decrease Button for Missle Selection*/
+#arrowLeft5{
+    width: 0; 
+    height: 0; 
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent; 
+    border-right:15px solid red; 
+    margin-top:398px;
+    margin-left:640px;
+    position: absolute;
+    z-index:2;
+}
+/*Increase Button Cursor Manipulation for Missle Selection*/
+#arrowRight5:hover{
+    cursor: pointer;
+}
+/*Decrease Button Cursor Manipulation for Missle Selection*/
+#arrowLeft5:hover{
+    cursor: pointer;
+}
+/*Weapon Store title*/
+.weaponTitle{
+    font-family: 'Special Elite', cursive;
+    position:absolute;
+    z-index:3;
+    margin-left:640px;
+    margin-top:560px;
+    color: darkgreen;
+}
+/*Red Missle*/
+img#missileRed{
+    position: absolute;
+    margin-left: 300px;
+    margin-top:8px;
+    z-index: 5;
+    width:auto;
+    height:150px;
+}
+/*Green Missile*/
+img#missileGreen{
+    position: absolute;
+    margin-top:240px;
+    margin-left:600px;
+    z-index: 5;
+    width:auto ;
+    height:150px;
+}
+/*Red and Blue Missile*/
+img#missileRedblue{
+    margin-top:8px;
+    margin-left:-15px;
+    position: absolute;
+    z-index: 5;
+    width:auto;
+    height:150px;
+}
+/*Blue Missile*/
+img#missileBlue{
+    position: absolute;
+    margin-top:240px;
+    margin-left:300px;
+    z-index: 5;
+    width:auto;
+    height:150px;
+}
+/*Orange Missile*/
+img#missileOrange{
+    position: absolute;
+    margin-top:240px;
+    margin-left:-20px;
+    z-index: 5;
+    width:auto;
+    height:150px;
+}
+/*Inventory Amount for 1st Weapon at Weapon Store*/
+#selector{
+    text-align:center;
+    position:absolute;
+    z-index:4;
+    margin-top:185px;
+    margin-left:80px;
+    color:red;
+    font-family: 'Special Elite', cursive;
+}
+/*Inventory Amount for 2nd Weapon at Weapon Store*/
+#selector2{
+    text-align:center;
+    position:absolute;
+    z-index:4;
+    margin-top:185px;
+    margin-left:400px;
+    color:red;
+    font-family: 'Special Elite', cursive;
+}
+/*Inventory Amount for 3rd Weapon at Weapon Store*/
+#selector3{
+    text-align:center;
+    position:absolute;
+    z-index:4;
+    margin-top:410px;
+    margin-left:75px;
+    color:red;
+    font-family: 'Special Elite', cursive;
+}
+/*Inventory Amount for 4th Weapon at Weapon Store*/
+#selector4{
+    text-align:center;
+    position:absolute;
+    z-index:4;
+    margin-top:410px;
+    margin-left:395px;
+    color:red;
+    font-family: 'Special Elite', cursive;
+}
+/*Inventory Amount for 5th Weapon at Weapon Store*/
+#selector5{
+    text-align:center;
+    position:absolute;
+    z-index:4;
+    margin-top:410px;
+    margin-left:695px;
+    color:red;
+    font-family: 'Special Elite', cursive;
+}
+/*Explains to the Player How Many Points are Left to Spend at Weapon Store*/
+#pointsLeftHolder{
+    position: absolute;
+    z-index:5;
+    margin-left:530px;
+    margin-top: 25px;
+    color:darkgreen;
+    width:500px;
+    font-family: 'Special Elite', cursive;	
+}
+/*Shows the Player How Many Points are Left to Spend*/
+#pointsLeft{
+    font-family: 'Special Elite', cursive;
+    text-decoration: underline;
+}
+/*Confirm Button on Weapon Store Screen*/
+#purchaseButton{
+    width:100px;
+    height:40px;
+    margin-top:480px;
+    margin-left:400px;
+    border-radius:5px;
+    line-height:40px;
+    text-align:center;
+    color:white;
+    background-color:green;
+    position: absolute;
+    z-index:7;
+    font-family: 'Special Elite', cursive;
+}
+/*Confirm Button Cursor Manipulation on Weapon Store Screen*/
+#purchaseButton:hover{
+    cursor:pointer;
+}
+/*Weapon Store Instructions*/
+#descrPiece{
+    width:250px;
+    font-family: 'Special Elite', cursive;
+    color:darkgreen;
+    position: absolute;
+    z-index:7;
+    margin-top: 50px;
+    margin-left:540px;
+}
+/*Spinning Tank Coin on Victory Screen*/
+img#spinCoin{
+    margin-left:-385px;
+    width:800px;
+    height:600px;
+    position:absolute;
+    z-index:3;
+    
+}
+/*Text That Appears When The Player Wins*/
+#victoryText{
+    position:absolute;
+    z-index:8;
+    text-align: center;
+    margin-left:-5px;
+    margin-top:-150px;
+    width:800px;
+    height:600px;
+}
+/*Victory Screen Title*/
+#checkVictory{
+    text-align: center;
+    margin-left:-60px;
+}
+/*Loss Screen Title*/
+#checkLoss{
+    text-align: center;
+    margin-left:-60px;
+}
+/*Best People in the Universe*/ 
+#authorNames{
+    position:absolute;
+    z-index:10;
+    color:white;
+    margin-top:100px;
+    margin-left:255px;
+    font-family: 'Special Elite', cursive;
+    text-align:center;
+}
